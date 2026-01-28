@@ -1,0 +1,4 @@
+This file is created to test pull request creation with SHA parameter verification.
+
+Test date: 2026-01-28
+Test purpose: Verify merge with SHA parameter works correctly
