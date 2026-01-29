@@ -1,0 +1,39 @@
+name: Create Test Artifact
+
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_name:
+        description: 'Name of the artifact to create'
+        required: false
+        default: 'test-artifact'
+      artifact_content:
+        description: 'Content for the artifact file'
+        required: false
+        default: 'This is a test artifact created by workflow_dispatch'
+
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create test file
+        run: |
+          echo "${{ github.event.inputs.artifact_content || 'This is a test artifact created by workflow_dispatch' }}" > test-file.txt
+          echo "Created at: $(date)" >> test-file.txt
+          echo "Workflow run: ${{ github.run_number }}" >> test-file.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.artifact_name || 'test-artifact' }}
+          path: test-file.txt
+          retention-days: 1
+
+      - name: Display artifact info
+        run: |
+          echo "Artifact created successfully!"
+          echo "Artifact name: ${{ github.event.inputs.artifact_name || 'test-artifact' }}"
+          echo "Run ID: ${{ github.run_id }}"
