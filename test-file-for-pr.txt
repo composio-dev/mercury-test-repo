@@ -1,6 +1,6 @@
-This is a test file created to test the 'base branch was modified' error scenario.
+This is a test file created for the PR merge action.
 
-This file was added to the head branch to create a difference from the base branch,
-allowing a pull request to be created.
+This file contains some sample content to demonstrate the commit multiple files action.
+Created on: 2024-02-01
 
-After the PR is created, the base branch will be modified to trigger the error.
+Test successful!
