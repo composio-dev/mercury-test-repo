@@ -1,0 +1,3 @@
+This file is created to test the stale SHA scenario.
+
+The pull request will be created with this change, and then the base branch can be modified to test the stale SHA scenario.

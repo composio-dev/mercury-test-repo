@@ -1,0 +1,6 @@
+This is a test file created to test merge functionality and reproduce the 'base branch was modified' scenario.
+
+Test details:
+- Created on test-merge-scenario-branch
+- Purpose: Test merge functionality
+- Scenario: Base branch modification testing
