@@ -1,0 +1,1 @@
+This is a test file created to verify that files with spaces in their names can be successfully created in GitHub repositories.
